@@ -1,0 +1,21 @@
+{
+	"files":[
+		"mvbr/aura_components",
+		"mvbr/xml",
+		"mvbr/css",
+		"mvbr/index.js",
+		"mvbr/index.html",
+		"mvbr/package.json",
+		"mvbr/config.json",
+		"mvbr/.gitignore",
+		"mvbr/LICENSE",
+		"mvbr/README.md",
+		"kse/aura_components"
+	],
+	"osx" :[
+		"mvbr/run.command"
+	],
+	"win32" :[
+		"mvbr/run.cmd"
+	]	
+}
