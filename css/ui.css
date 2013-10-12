@@ -1,4 +1,4 @@
-﻿hl {color:red;background:yellow;}
+hl {color:red;background:yellow;}
 .resultitem {font-size:200%;}
 
 span.selectedtoc {
@@ -20,6 +20,4 @@ margin-right:-30px;}
 .hit {
 	float:right;color:DarkOrange;font-weight:bold;font-family: Courier
 }
-
-god:before {content:'　'}
 

@@ -1,4 +1,4 @@
-var abbr=
+var naming= // cn=chinese_name cb=chinese_brief en=english_name eb=english_brief
 {"創":{"cn":"創世記","cb":"創","en":"Genesis","eb":"Gen"},
  "出":{"cn":"出埃及記","cb":"出","en":"Exodus","eb":"Exo"},
  "利":{"cn":"利未記","cb":"利","en":"Leviticus","eb":"Lev"},
@@ -38,7 +38,7 @@ var abbr=
  "該":{"cn":"哈該書","cb":"該","en":"Haggai","eb":"Hag"},
  "亞":{"cn":"撒迦利亞書","cb":"亞","en":"Zechariah","eb":"Zec"},
  "瑪":{"cn":"瑪拉基書","cb":"瑪","en":"Malachi","eb":"Mal"},
- "太":{"cn":"馬太福音","cb":"太","en":"Matthew","eb":"Mat"},
+ "太":{"cn":"馬太福音","cb":"太","en":"Matthew","eb":"mat"},
  "可":{"cn":"馬可福音","cb":"可","en":"Mark","eb":"Mak"},
  "路":{"cn":"路加福音","cb":"路","en":"Luke","eb":"Luk"},
  "約":{"cn":"約翰福音","cb":"約","en":"John","eb":"Jhn"},
@@ -60,39 +60,66 @@ var abbr=
  "雅":{"cn":"雅各書","cb":"雅","en":"James","eb":"Jas"},
  "彼前":{"cn":"彼得前書","cb":"彼前","en":"1 Peter","eb":"1Pe"},
  "彼後":{"cn":"彼得後書","cb":"彼後","en":"2 Peter","eb":"2Pe"},
- "約一":{"cn":"約翰壹書","cb":"約一","en":"1 John","eb":"1Jn"},
- "約二":{"cn":"約翰貳書","cb":"約二","en":"2 John","eb":"2Jn"},
- "約三":{"cn":"約翰參書","cb":"約三","en":"3 John","eb":"3Jn"},
+ "約壹":{"cn":"約翰壹書","cb":"約壹","en":"1 John","eb":"1Jn"},
+ "約貳":{"cn":"約翰貳書","cb":"約貳","en":"2 John","eb":"2Jn"},
+ "約參":{"cn":"約翰參書","cb":"約參","en":"3 John","eb":"3Jn"},
  "猶":{"cn":"猶大書","cb":"猶","en":"Jude","eb":"Jud"},
  "啟":{"cn":"啟示錄","cb":"啟","en":"Revelation","eb":"Rev"}
  }
-// console.log(abbr["猶"])
+// console.log(naming["猶"])
+var match, line, N, i, n
+var text, testment, chinese_brief, chinese_name, english_brief
+var chapter_index, verse_index, verse
+var backs='';for(var j=0;j<5;j++)backs+=String.fromCharCode(8)
 var fs=require('fs')
-var inp=fs.readFileSync('1ot.xml').toString().split('\r\n')
-var mat, bks=''
-for (var i=0;i<inp.length;i++) {
-	var lin=inp[i]
-	if (mat=lin.match(/<簡名>(.+?)<\/簡名>$/)) {
-		var cb=mat[1]
-		var ab=abbr[cb] // console.log(ab)
-		lin='<book id="'+ab.eb+'">'+ab.cn+' ('+cb+')<\/book>'
-	} else 
-	if (mat=lin.match(/^<章>(.+?)(\d+)<\/章>/)) {
-		var cb=mat[1], cn=mat[2]
-		var ab=abbr[cb]
-		lin='<chapter n="'+cn+'">'+cb+cn+'<\/chapter>'
-	} else
-	if (mat=lin.match(/<節>.+?:(\d+)<\/節> (.+)/)) {
-		var vs=mat[1], tx=mat[2]
-		lin='<verse n="'+vs+'">'+tx+'<\/verse>'
-	}
-	var n=i
-	n=n.toString()
-	bks='';for(var j=0;j<5;j++)bks+=String.fromCharCode(8)
-	process.stdout.write(bks+'0000'.substr(0,5-n.length)+n)
-//	console.log(i,lin)
-	inp[i]=lin
+var f, files=['1ot','2nt']
+var file_name, file_ext='xml', file
+for (f=0;f<files.length;f++) {
+	file_name=files[f]
+	file=file_name+'.'+file_ext
+	text=fs.readFileSync(file).toString().split('\r\n')
+	console.log(text.length,'lines read from',file)
+	for (i=0;i<text.length;i++) {
+	//	if (i>20) break
+		line=text[i]
+		if (!line) continue
+		if (match=line.match(/<檔 .+"(.+)\..+">/)) {
+			n=match[1]
+			line='<xml id="'+n+'.xml">'
+			testment=n.substr(1)
+		} else 
+		if (match=line.match(/^<約>(.+?)<\/約>/)) {
+			line='<testment id="'+testment+'">'+match[1]+'</testment>'
+		} else 
+		if (match=line.match(/<_頁 n="1" ?\/>/)) {
+			line='<pb n="1"/>'
+		} else 
+		if (match=line.match(/<簡名>(.+?)<\/簡名>$/)) {
+			chinese_brief=match[1], N=naming[chinese_brief]
+		//	console.log(N)
+			english_brief=N.eb, chinese_name=N.cn
+			line='<book id="'+english_brief+'">'+chinese_brief+' ('+chinese_name+')</book>'
+		} else 
+		if (match=line.match(/^<章>.+?(\d+)<\/章>/)) {
+		//	console.log(match)
+			chapter_index=match[1]
+			line='<chapter n="'+chapter_index+'">'+chinese_brief+chapter_index+'</chapter>'
+		} else
+		if (match=line.match(/<節>.+?:(\d+)<\/節> (.+)/)) {
+			verse_index=match[1], verse=match[2].replace('　神','<god>神</god>')
+			line='<verse n="'+verse_index+'"/>'+chinese_brief+chapter_index+':'+verse_index+' '+verse
+		} else
+		if (match=line.match(/<\/檔>/)) {
+			line='</xml>'
+		}
+		if (match) {
+	//		console.log(line)
+			text[i]=line
+		}
+		n=i.toString()
+		process.stdout.write(backs+'0000'.substr(0,5-n.length)+n)
+	} // /*
+	file=file_name+'1.'+file_ext
+	console.log('\r\n'+n,'lines converted to',file,'utf-8')
+	fs.writeFileSync(file,text.join('\r\n')) // */
 }
-out=inp.join('\r\n')
-console.log('\r\n'+out.length)
-fs.writeFileSync('1ot1.xml',out)
