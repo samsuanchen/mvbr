@@ -72,54 +72,28 @@ var text, testment, chinese_brief, chinese_name, english_brief
 var chapter_index, verse_index, verse
 var backs='';for(var j=0;j<5;j++)backs+=String.fromCharCode(8)
 var fs=require('fs')
-var f, files=['1ot','2nt']
-var file_name, file_ext='xml', file
-for (f=0;f<files.length;f++) {
-	file_name=files[f]
-	file=file_name+'.'+file_ext
-	text=fs.readFileSync(file).toString().split('\r\n')
-	console.log(text.length,'lines read from',file)
-	for (i=0;i<text.length;i++) {
-	//	if (i>20) break
-		line=text[i]
-		if (!line) continue
-		if (match=line.match(/<檔 .+"(.+)\..+">/)) {
-			n=match[1]
-			line='<xml id="'+n+'.xml">'
-			testment=n.substr(1)
-		} else 
-		if (match=line.match(/^<約>(.+?)<\/約>/)) {
-			line='<testment id="'+testment+'">'+match[1]+'</testment>'
-		} else 
-		if (match=line.match(/<_頁 n="1" ?\/>/)) {
-			line='<pb n="1"/>'
-		} else 
-		if (match=line.match(/<簡名>(.+?)<\/簡名>$/)) {
-			chinese_brief=match[1], N=naming[chinese_brief]
-		//	console.log(N)
-			english_brief=N.eb, chinese_name=N.cn
-			line='<book id="'+english_brief+'">'+chinese_brief+' ('+chinese_name+')</book>'
-		} else 
-		if (match=line.match(/^<章>.+?(\d+)<\/章>/)) {
-		//	console.log(match)
-			chapter_index=match[1]
-			line='<chapter n="'+chapter_index+'">'+chinese_brief+chapter_index+'</chapter>'
-		} else
-		if (match=line.match(/<節>.+?:(\d+)<\/節> (.+)/)) {
-			verse_index=match[1], verse=match[2].replace('　神','<god>神</god>')
-			line='<verse n="'+verse_index+'"/>'+chinese_brief+chapter_index+':'+verse_index+' '+verse
-		} else
-		if (match=line.match(/<\/檔>/)) {
-			line='</xml>'
-		}
-		if (match) {
-	//		console.log(line)
-			text[i]=line
-		}
-		n=i.toString()
-		process.stdout.write(backs+'0000'.substr(0,5-n.length)+n)
-	} // /*
-	file=file_name+'1.'+file_ext
-	console.log('\r\n'+n,'lines converted to',file,'utf-8')
-	fs.writeFileSync(file,text.join('\r\n')) // */
+var file_name, file_ext='xml', file, out
+file_name='kjv'
+file=file_name+'.'+file_ext
+text=fs.readFileSync(file).toString().split('\r\n')
+console.log(text.length,'lines read from',file)
+out=
+['<xml id="'+file+'" info="'+text[0]+'">'
+,'<testment id="ot">Old testment</testment>'
+]
+for (i=1;i<text.length;i++) {
+//	if (i>20) break
+	line=text[i]
+	if (!line) continue
+	match=line.match(/(\d?[A-Z][a-z]+)(\d+):(\d+) (.+)/)
+	if (!match) continue
+	if (english_brief!==match[1]) {
+		english_brief  =match[1]
+		console.log(english_brief)
+	}
+//	n=i.toString()
+//	process.stdout.write(backs+'0000'.substr(0,5-n.length)+n)
 }
+//	file=file_name+'1.'+file_ext
+//	console.log('\r\n'+n,'lines converted to',file,'utf-8')
+//	fs.writeFileSync(file,text.join('\r\n')) // */
