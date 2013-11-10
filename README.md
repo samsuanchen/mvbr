@@ -23,5 +23,25 @@ you will get sample.ydb in slotfilter
 * 7. 到 ksanapc 資料夾, 執行 node scaffold.js mvbr kse --overwrite
 * 8. 到 mvbr 資料夾, 編輯 config.json 指定 db 使用 chinese_bible.ydb
 
-###測試 bible_chinese.ydb 的步驟:
-* 1. 到 kse 資料夾, 執行 run.cmd
+###下載 康熙字典 的步驟:
+* 1. 到 ksanapc 資料夾
+* 2. 執行 git clone https://github.com/ksanaforge/kangxizidian
+* 3. 到 ksanapc\kangxizidian\xml 資料夾
+* 4. 執行 build.cmd
+
+###測試 *.ydb 的步驟:
+* 1. 到 kse 資料夾, 執行 run.cmd (所有 ksanapc 下一層資料夾內 *.ydb 都連上)
+
+###製作 bible1, hb51, hgb1, kjv1, bbe1 對應 .ydb 的步驟:
+* 1. 滑鼠連點兩下 c:\ksanapc\mvbr\xml\build_bibles.cmd 執行:
+		node conv_bibles.js   >build_bibles.log
+		call buildydb bible1 >>build_bibles.log
+		call buildydb hb51   >>build_bibles.log
+		call buildydb hgb1   >>build_bibles.log
+		call buildydb kjv1   >>build_bibles.log
+		call buildydb bbe1   >>build_bibles.log
+     自動轉換 5 個對應的 *.txt 產生 *1.xml *1.ydb build_bibles.log
+* 2. commit
+* 3. 到 kse 資料夾, 執行 git pull (確定使用最新版本)
+* 4. 到 ksanapc 資料夾, 執行 node scaffold.js mvbr kse --overwrite
+* 5. 到 mvbr 資料夾, 編輯 config.json 指定 db 使用 對應的 *1.ydb
