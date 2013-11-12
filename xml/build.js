@@ -1,6 +1,6 @@
 var dbid=process.argv[1].match(/[^\\]*$/)[0]
 console.log(require('yase').build({
-	dbid:dbid,
+	dbid:dbid, slotshift: 8,
 	schema:function() {
 		this.toctag(["xml","testiment","book","chapter","verse"])
 		    .attr("testiment","id",{"saveval":true,"unique":true})	

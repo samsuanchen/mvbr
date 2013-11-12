@@ -1,6 +1,6 @@
 var set=process.argv[2]||"chinese";
 console.log(require('yase').build({
-	dbid:'bible_'+set,
+	dbid:'bible_'+set, slotshift: 8,
 	schema:function() {
 		this.toctag(["xml","testiment","book","chapter","verse"])
 		    	.attr("testiment","id",{"saveval":true,"unique":true})	
