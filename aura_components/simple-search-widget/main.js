@@ -1,18 +1,19 @@
-define(['underscore','backbone','text!./template.tmpl',
+define(['underscore','backbone','text!./template.tmpl','text!./dbs_template.tmpl',
   'text!../config.json'], 
-  function(_,Backbone,template,config) {
+  function(_,Backbone,template,dbs_template,config) {
   return {
     type: 'Backbone', 
     events: {
     	"input #tofind":"dosearch",
       "click #cleartofind":"cleartofind",
-      "click input[name='vriset']":"selectset",
+      "click input[name='selectdb']":"selectdb",
     },
     cleartofind:function() {
       this.$el.find("#tofind").val("").focus();
       this.dosearch();
     },
-    selectdb:function(db) {
+    selectdb:function(e) {
+      var db=$(e.target).data('db');
       this.model.set('db',db);
     },
     gotosource:function(opts) {
@@ -79,11 +80,7 @@ define(['underscore','backbone','text!./template.tmpl',
     },
     showdbs:function() {
       var dbs=this.model.get('dbs');
-      var dbshtml="";
-      for (var i in dbs) {
-        dbshtml+=dbs[i].name+"("+JSON.stringify(dbs[i].count.count)+")";
-      }
-      $("#bible_related_db").html(dbshtml);
+      $("#bible_related_db").html(_.template(dbs_template,{dbs:dbs}));
     },
     initialize: function() {
      	this.render();

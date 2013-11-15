@@ -1,6 +1,6 @@
 {
 	"db":"bible_chinese",
-	"dbs":["bible_chinese"],
+	"dbs":["bible_chinese", "bible1", "hb51", "hgb1", "bbe1", "kjv1"],
 	"website":"http://samsuanchen.github.io",
 	"searchtab":[
 		{"widget":"simple-search-widget","name":"Simple Search"}
