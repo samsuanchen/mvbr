@@ -141,7 +141,7 @@ var backs='';for(var j=0;j<5;j++)backs+=String.fromCharCode(8)
 var fs=require('fs')
 var file_name, file, out
 var f, files=['bbe','bible','hb5','hgb','kjv']
-for (f=0;f<files.length;f++) {
+for (f=0;f<files.length;f++) { book_index=0
 	file_name=files[f]
 	file=file_name+'.txt'
 	bible=fs.readFileSync(file).toString()
@@ -162,14 +162,14 @@ for (f=0;f<files.length;f++) {
 		//	console.log(book_index,book_id,N)
 			if (!isNaN(N)) N=naming[N]
 			if        (book_index=== 1) {
-				out.push('\r\n<testment id="ot" n="1">Old Testment</testment>')
+				out.push('\r\n<testment n="1">Old Testment</testment>')
 			} else if (book_index===40) {
-				out.push('\r\n<testment id="nt" n="2">New Testment</testment>')
+				out.push('\r\n<testment n="2">New Testment</testment>')
 			}
 			out.push('')
 			book_name=N?N.en:'? undefined <===== '+book_index
 			bid=N.eb
-			line='<book id="'+bid+'"'+' n="'+book_index+'">'+book_id+' ('+book_name+')</book>'
+			line='<book n="'+book_index+'">'+book_id+' ('+book_name+')</book>'
 			console.log(line)
 			out.push(line)
 		}
@@ -177,7 +177,7 @@ for (f=0;f<files.length;f++) {
 		if (chapter_id!==book_id+chapter_index) {
 			chapter_id = book_id+chapter_index
 			cid=bid+chapter_index
-			line='<chapter id="'+cid+'" n="'+chapter_index+'">'+chapter_id+'</chapter>'
+			line='<chapter n="'+chapter_index+'">'+chapter_id+'</chapter>'
 			// console.log(line)
 			out.push(line)
 		}
@@ -185,7 +185,7 @@ for (f=0;f<files.length;f++) {
 		verse=match[4].replace(/　?神/g,'<god>神</god>')
 		verse_id=chapter_id+':'+verse_index
 		vid=cid+':'+verse_index
-		line='<verse id="'+vid+'" n="'+verse_index+'"/>'+verse_id+' '+verse
+		line='<verse n="'+verse_index+'"/>'+verse_id+' '+verse
 		// console.log(line)
 		out.push(line)
 	//	n=i.toString()

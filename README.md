@@ -18,10 +18,9 @@ you will get sample.ydb in slotfilter
 * 2. 編輯 bible_chinese.lst 內含兩列 1ot1.xml, 2nt1.xml
 * 3. 編輯 mvbr1.js 引用 bible_chinese.lst
 * 4. node mvbr1.js 建立 bible_chinese.ydb
-* 5. commit
+* 5. commit and sync
 * 6. 到 kse 資料夾, 執行 git pull (確定使用最新版本)
-* 7. 到 ksanapc 資料夾, 執行 node scaffold.js mvbr kse --overwrite
-* 8. 到 mvbr 資料夾, 編輯 config.json 指定 db 使用 chinese_bible.ydb
+* 7. 到 mvbr 資料夾, 編輯 config.json 指定 db 使用 chinese_bible.ydb
 
 ###下載 康熙字典 的步驟:
 * 1. 到 ksanapc 資料夾
@@ -38,10 +37,9 @@ you will get sample.ydb in slotfilter
 		call buildydb kjv1   >>build_bibles.log
 		call buildydb bbe1   >>build_bibles.log
      自動轉換 5 個對應的 *.txt 產生 *1.xml *1.ydb build_bibles.log
-* 2. commit
+* 2. commit and sync
 * 3. 到 kse 資料夾, 執行 git pull (確定使用最新版本)
-* 4. 到 ksanapc 資料夾, 執行 node scaffold.js mvbr kse --overwrite
-* 5. 到 mvbr 資料夾, 編輯 config.json 指定 db 使用 對應的 *1.ydb 以測試
+* 4. 到 mvbr 資料夾, 編輯 config.json 指定 db 使用 對應的 *1.ydb 以測試
 
 ###測試 *.ydb 的步驟:
 * 1. 到 mvbr 資料夾, 執行 run.cmd (對應的 *1.ydb 連上)

@@ -1,0 +1,503 @@
+31104 lines read from bbe.txt
+<book n="1">Gen (Genesis)</book>
+<book n="2">Exo (Exodus)</book>
+<book n="3">Lev (Leviticus)</book>
+<book n="4">Num (Numbers)</book>
+<book n="5">Deu (Deuteronomy)</book>
+<book n="6">Jos (Joshua)</book>
+<book n="7">Jug (Judges)</book>
+<book n="8">Rut (Ruth)</book>
+<book n="9">1Sa (1 Samuel)</book>
+<book n="10">2Sa (2 Samuel)</book>
+<book n="11">1Ki (1Kings)</book>
+<book n="12">2Ki (2Kings)</book>
+<book n="13">1Ch (1 Chronicles)</book>
+<book n="14">2Ch (2 Chronicles)</book>
+<book n="15">Ezr (Ezra)</book>
+<book n="16">Neh (Nehemiah)</book>
+<book n="17">Est (Esther)</book>
+<book n="18">Job (Job)</book>
+<book n="19">Psm (Psalms)</book>
+<book n="20">Pro (Proverbs)</book>
+<book n="21">Ecc (Ecclesiastes)</book>
+<book n="22">Son (Song of Songs)</book>
+<book n="23">Isa (Isaiah)</book>
+<book n="24">Jer (Jeremiah)</book>
+<book n="25">Lam (Lamentations)</book>
+<book n="26">Eze (Ezekiel)</book>
+<book n="27">Dan (Daniel)</book>
+<book n="28">Hos (Hosea)</book>
+<book n="29">Joe (Joel)</book>
+<book n="30">Amo (Amos)</book>
+<book n="31">Oba (Obadiah)</book>
+<book n="32">Jon (Jonah)</book>
+<book n="33">Mic (Micah)</book>
+<book n="34">Nah (Nahum)</book>
+<book n="35">Hab (Habakkuk)</book>
+<book n="36">Zep (Zephaniah)</book>
+<book n="37">Hag (Haggai)</book>
+<book n="38">Zec (Zechariah)</book>
+<book n="39">Mal (Malachi)</book>
+<book n="40">Mat (Matthew)</book>
+<book n="41">Mak (Mark)</book>
+<book n="42">Luk (Luke)</book>
+<book n="43">Jhn (John)</book>
+<book n="44">Act (Acts)</book>
+<book n="45">Rom (Romans)</book>
+<book n="46">1Co (1 Corinthians)</book>
+<book n="47">2Co (2 Corinthians)</book>
+<book n="48">Gal (Galatians)</book>
+<book n="49">Eph (Ephesians)</book>
+<book n="50">Phl (Philippians)</book>
+<book n="51">Col (Colossians)</book>
+<book n="52">1Ts (1 Thessalonians)</book>
+<book n="53">2Ts (2 Thessalonians)</book>
+<book n="54">1Ti (1 Timothy)</book>
+<book n="55">2Ti (2 Timothy)</book>
+<book n="56">Tit (Titus)</book>
+<book n="57">Phm (Philemon)</book>
+<book n="58">Heb (Hebrews)</book>
+<book n="59">Jas (James)</book>
+<book n="60">1Pe (1 Peter)</book>
+<book n="61">2Pe (2 Peter)</book>
+<book n="62">1Jn (1 John)</book>
+<book n="63">2Jn (2 John)</book>
+<book n="64">3Jn (3 John)</book>
+<book n="65">Jud (Jude)</book>
+<book n="66">Rev (Revelation)</book>
+32428 lines write to bbe1.xml
+31102 lines read from bible.txt
+<book n="1">創 (Genesis)</book>
+<book n="2">出 (Exodus)</book>
+<book n="3">利 (Leviticus)</book>
+<book n="4">民 (Numbers)</book>
+<book n="5">申 (Deuteronomy)</book>
+<book n="6">書 (Joshua)</book>
+<book n="7">士 (Judges)</book>
+<book n="8">得 (Ruth)</book>
+<book n="9">撒上 (1 Samuel)</book>
+<book n="10">撒下 (2 Samuel)</book>
+<book n="11">王上 (1Kings)</book>
+<book n="12">王下 (2Kings)</book>
+<book n="13">代上 (1 Chronicles)</book>
+<book n="14">代下 (2 Chronicles)</book>
+<book n="15">拉 (Ezra)</book>
+<book n="16">尼 (Nehemiah)</book>
+<book n="17">斯 (Esther)</book>
+<book n="18">伯 (Job)</book>
+<book n="19">詩 (Psalms)</book>
+<book n="20">箴 (Proverbs)</book>
+<book n="21">傳 (Ecclesiastes)</book>
+<book n="22">歌 (Song of Songs)</book>
+<book n="23">賽 (Isaiah)</book>
+<book n="24">耶 (Jeremiah)</book>
+<book n="25">哀 (Lamentations)</book>
+<book n="26">結 (Ezekiel)</book>
+<book n="27">但 (Daniel)</book>
+<book n="28">何 (Hosea)</book>
+<book n="29">珥 (Joel)</book>
+<book n="30">摩 (Amos)</book>
+<book n="31">俄 (Obadiah)</book>
+<book n="32">拿 (Jonah)</book>
+<book n="33">彌 (Micah)</book>
+<book n="34">鴻 (Nahum)</book>
+<book n="35">哈 (Habakkuk)</book>
+<book n="36">番 (Zephaniah)</book>
+<book n="37">該 (Haggai)</book>
+<book n="38">亞 (Zechariah)</book>
+<book n="39">瑪 (Malachi)</book>
+<book n="40">太 (Matthew)</book>
+<book n="41">可 (Mark)</book>
+<book n="42">路 (Luke)</book>
+<book n="43">約 (John)</book>
+<book n="44">徒 (Acts)</book>
+<book n="45">羅 (Romans)</book>
+<book n="46">林前 (1 Corinthians)</book>
+<book n="47">林後 (2 Corinthians)</book>
+<book n="48">加 (Galatians)</book>
+<book n="49">弗 (Ephesians)</book>
+<book n="50">腓 (Philippians)</book>
+<book n="51">西 (Colossians)</book>
+<book n="52">帖前 (1 Thessalonians)</book>
+<book n="53">帖後 (2 Thessalonians)</book>
+<book n="54">提前 (1 Timothy)</book>
+<book n="55">提後 (2 Timothy)</book>
+<book n="56">多 (Titus)</book>
+<book n="57">門 (Philemon)</book>
+<book n="58">來 (Hebrews)</book>
+<book n="59">雅 (James)</book>
+<book n="60">彼前 (1 Peter)</book>
+<book n="61">彼後 (2 Peter)</book>
+<book n="62">約壹 (1 John)</book>
+<book n="63">約貳 (2 John)</book>
+<book n="64">約參 (3 John)</book>
+<book n="65">猶 (Jude)</book>
+<book n="66">啟 (Revelation)</book>
+32427 lines write to bible1.xml
+31104 lines read from hb5.txt
+<book n="1">Gen (Genesis)</book>
+<book n="2">Exo (Exodus)</book>
+<book n="3">Lev (Leviticus)</book>
+<book n="4">Num (Numbers)</book>
+<book n="5">Deu (Deuteronomy)</book>
+<book n="6">Jos (Joshua)</book>
+<book n="7">Jug (Judges)</book>
+<book n="8">Rut (Ruth)</book>
+<book n="9">1Sa (1 Samuel)</book>
+<book n="10">2Sa (2 Samuel)</book>
+<book n="11">1Ki (1Kings)</book>
+<book n="12">2Ki (2Kings)</book>
+<book n="13">1Ch (1 Chronicles)</book>
+<book n="14">2Ch (2 Chronicles)</book>
+<book n="15">Ezr (Ezra)</book>
+<book n="16">Neh (Nehemiah)</book>
+<book n="17">Est (Esther)</book>
+<book n="18">Job (Job)</book>
+<book n="19">Psm (Psalms)</book>
+<book n="20">Pro (Proverbs)</book>
+<book n="21">Ecc (Ecclesiastes)</book>
+<book n="22">Son (Song of Songs)</book>
+<book n="23">Isa (Isaiah)</book>
+<book n="24">Jer (Jeremiah)</book>
+<book n="25">Lam (Lamentations)</book>
+<book n="26">Eze (Ezekiel)</book>
+<book n="27">Dan (Daniel)</book>
+<book n="28">Hos (Hosea)</book>
+<book n="29">Joe (Joel)</book>
+<book n="30">Amo (Amos)</book>
+<book n="31">Oba (Obadiah)</book>
+<book n="32">Jon (Jonah)</book>
+<book n="33">Mic (Micah)</book>
+<book n="34">Nah (Nahum)</book>
+<book n="35">Hab (Habakkuk)</book>
+<book n="36">Zep (Zephaniah)</book>
+<book n="37">Hag (Haggai)</book>
+<book n="38">Zec (Zechariah)</book>
+<book n="39">Mal (Malachi)</book>
+<book n="40">Mat (Matthew)</book>
+<book n="41">Mak (Mark)</book>
+<book n="42">Luk (Luke)</book>
+<book n="43">Jhn (John)</book>
+<book n="44">Act (Acts)</book>
+<book n="45">Rom (Romans)</book>
+<book n="46">1Co (1 Corinthians)</book>
+<book n="47">2Co (2 Corinthians)</book>
+<book n="48">Gal (Galatians)</book>
+<book n="49">Eph (Ephesians)</book>
+<book n="50">Phl (Philippians)</book>
+<book n="51">Col (Colossians)</book>
+<book n="52">1Ts (1 Thessalonians)</book>
+<book n="53">2Ts (2 Thessalonians)</book>
+<book n="54">1Ti (1 Timothy)</book>
+<book n="55">2Ti (2 Timothy)</book>
+<book n="56">Tit (Titus)</book>
+<book n="57">Phm (Philemon)</book>
+<book n="58">Heb (Hebrews)</book>
+<book n="59">Jas (James)</book>
+<book n="60">1Pe (1 Peter)</book>
+<book n="61">2Pe (2 Peter)</book>
+<book n="62">1Jn (1 John)</book>
+<book n="63">2Jn (2 John)</book>
+<book n="64">3Jn (3 John)</book>
+<book n="65">Jud (Jude)</book>
+<book n="66">Rev (Revelation)</book>
+32428 lines write to hb51.xml
+31104 lines read from hgb.txt
+<book n="1">Gen (Genesis)</book>
+<book n="2">Exo (Exodus)</book>
+<book n="3">Lev (Leviticus)</book>
+<book n="4">Num (Numbers)</book>
+<book n="5">Deu (Deuteronomy)</book>
+<book n="6">Jos (Joshua)</book>
+<book n="7">Jug (Judges)</book>
+<book n="8">Rut (Ruth)</book>
+<book n="9">1Sa (1 Samuel)</book>
+<book n="10">2Sa (2 Samuel)</book>
+<book n="11">1Ki (1Kings)</book>
+<book n="12">2Ki (2Kings)</book>
+<book n="13">1Ch (1 Chronicles)</book>
+<book n="14">2Ch (2 Chronicles)</book>
+<book n="15">Ezr (Ezra)</book>
+<book n="16">Neh (Nehemiah)</book>
+<book n="17">Est (Esther)</book>
+<book n="18">Job (Job)</book>
+<book n="19">Psm (Psalms)</book>
+<book n="20">Pro (Proverbs)</book>
+<book n="21">Ecc (Ecclesiastes)</book>
+<book n="22">Son (Song of Songs)</book>
+<book n="23">Isa (Isaiah)</book>
+<book n="24">Jer (Jeremiah)</book>
+<book n="25">Lam (Lamentations)</book>
+<book n="26">Eze (Ezekiel)</book>
+<book n="27">Dan (Daniel)</book>
+<book n="28">Hos (Hosea)</book>
+<book n="29">Joe (Joel)</book>
+<book n="30">Amo (Amos)</book>
+<book n="31">Oba (Obadiah)</book>
+<book n="32">Jon (Jonah)</book>
+<book n="33">Mic (Micah)</book>
+<book n="34">Nah (Nahum)</book>
+<book n="35">Hab (Habakkuk)</book>
+<book n="36">Zep (Zephaniah)</book>
+<book n="37">Hag (Haggai)</book>
+<book n="38">Zec (Zechariah)</book>
+<book n="39">Mal (Malachi)</book>
+<book n="40">Mat (Matthew)</book>
+<book n="41">Mak (Mark)</book>
+<book n="42">Luk (Luke)</book>
+<book n="43">Jhn (John)</book>
+<book n="44">Act (Acts)</book>
+<book n="45">Rom (Romans)</book>
+<book n="46">1Co (1 Corinthians)</book>
+<book n="47">2Co (2 Corinthians)</book>
+<book n="48">Gal (Galatians)</book>
+<book n="49">Eph (Ephesians)</book>
+<book n="50">Phl (Philippians)</book>
+<book n="51">Col (Colossians)</book>
+<book n="52">1Ts (1 Thessalonians)</book>
+<book n="53">2Ts (2 Thessalonians)</book>
+<book n="54">1Ti (1 Timothy)</book>
+<book n="55">2Ti (2 Timothy)</book>
+<book n="56">Tit (Titus)</book>
+<book n="57">Phm (Philemon)</book>
+<book n="58">Heb (Hebrews)</book>
+<book n="59">Jas (James)</book>
+<book n="60">1Pe (1 Peter)</book>
+<book n="61">2Pe (2 Peter)</book>
+<book n="62">1Jn (1 John)</book>
+<book n="63">2Jn (2 John)</book>
+<book n="64">3Jn (3 John)</book>
+<book n="65">Jud (Jude)</book>
+<book n="66">Rev (Revelation)</book>
+32357 lines write to hgb1.xml
+31104 lines read from kjv.txt
+<book n="1">Ge (Genesis)</book>
+<book n="2">Exo (Exodus)</book>
+<book n="3">Lev (Leviticus)</book>
+<book n="4">Num (Numbers)</book>
+<book n="5">Deu (Deuteronomy)</book>
+<book n="6">Josh (Joshua)</book>
+<book n="7">Jdgs (Judges)</book>
+<book n="8">Ruth (Ruth)</book>
+<book n="9">1Sm (1 Samuel)</book>
+<book n="10">2Sm (2 Samuel)</book>
+<book n="11">1Ki (1Kings)</book>
+<book n="12">2Ki (2Kings)</book>
+<book n="13">1Chr (1 Chronicles)</book>
+<book n="14">2Chr (2 Chronicles)</book>
+<book n="15">Ezra (Ezra)</book>
+<book n="16">Neh (Nehemiah)</book>
+<book n="17">Est (Esther)</book>
+<book n="18">Job (Job)</book>
+<book n="19">Psa (Psalms)</book>
+<book n="20">Prv (Proverbs)</book>
+<book n="21">Eccl (Ecclesiastes)</book>
+<book n="22">Sol (Song of Songs)</book>
+<book n="23">Isa (Isaiah)</book>
+<book n="24">Jer (Jeremiah)</book>
+<book n="25">Lam (Lamentations)</book>
+<book n="26">Eze (Ezekiel)</book>
+<book n="27">Dan (Daniel)</book>
+<book n="28">Hos (Hosea)</book>
+<book n="29">Joel (Joel)</book>
+<book n="30">Amos (Amos)</book>
+<book n="31">Obad (Obadiah)</book>
+<book n="32">Jonah (Jonah)</book>
+<book n="33">Mic (Micah)</book>
+<book n="34">Nahum (Nahum)</book>
+<book n="35">Hab (Habakkuk)</book>
+<book n="36">Zep (Zephaniah)</book>
+<book n="37">Hag (Haggai)</book>
+<book n="38">Zec (Zechariah)</book>
+<book n="39">Mal (Malachi)</book>
+<book n="40">Mat (Matthew)</book>
+<book n="41">Mark (Mark)</book>
+<book n="42">Luke (Luke)</book>
+<book n="43">John (John)</book>
+<book n="44">Acts (Acts)</book>
+<book n="45">Rom (Romans)</book>
+<book n="46">1Cor (1 Corinthians)</book>
+<book n="47">2Cor (2 Corinthians)</book>
+<book n="48">Gal (Galatians)</book>
+<book n="49">Eph (Ephesians)</book>
+<book n="50">Phi (Philippians)</book>
+<book n="51">Col (Colossians)</book>
+<book n="52">1Th (1 Thessalonians)</book>
+<book n="53">2Th (2 Thessalonians)</book>
+<book n="54">1Tim (1 Timothy)</book>
+<book n="55">2Tim (2 Timothy)</book>
+<book n="56">Titus (Titus)</book>
+<book n="57">Phmn (Philemon)</book>
+<book n="58">Heb (Hebrews)</book>
+<book n="59">Jas (James)</book>
+<book n="60">1Pet (1 Peter)</book>
+<book n="61">2Pet (2 Peter)</book>
+<book n="62">1Jn (1 John)</book>
+<book n="63">2Jn (2 John)</book>
+<book n="64">3Jn (3 John)</book>
+<book n="65">Jude (Jude)</book>
+<book n="66">Rev (Revelation)</book>
+32428 lines write to kjv1.xml
+�ƻs�F         1 ���ɮסC
+Start indexing Sun Nov 10 2013 16:26:57 GMT+0800 (台北標準時間)
+SLOTSIZE 256
+bible1.xml                                                            ydb estimate size: 134217728
+overflow slots: {}
+performing postings2tree
+output filename ../bible1.ydb
+{ build: 20,
+  dbid: 'bible1',
+  builddatetime: 'Sun Nov 10 2013 16:27:01 GMT+0800 (台北標準時間)',
+  buildduration: 3817,
+  slotcount: 34465,
+  tokencount: 1159994,
+  slotperbatch: 256,
+  toc: 
+   { logical: [ 'testiment', 'book', 'chapter' ],
+     physical: [ 'book', 'pb' ] },
+  slotshift: 8,
+  version: '0.0.0',
+  tags: 
+   [ 'xml',
+     'pb',
+     'testment',
+     '/testment',
+     'book',
+     '/book',
+     'chapter',
+     '/chapter',
+     'verse',
+     'god',
+     '/god',
+     '',
+     '/',
+     '/xml' ],
+  schema: '{"xml":{"newslot":true,"savepos":true,"savehead":true},"testiment":{"newslot":true,"savepos":true,"savehead":true,"indexattributes":{"id":{"regstr":" id=\\"(.*?)\\"","unique":true,"saveval":true}}},"book":{"newslot":true,"savepos":true,"savehead":true,"indexattributes":{"n":{"regstr":" n=\\"(.*?)\\"","saveval":true}}},"chapter":{"newslot":true,"savepos":true,"savehead":true,"indexattributes":{"n":{"regstr":" n=\\"(.*?)\\"","unique":true,"saveval":true,"prefix":"book[n]"}}},"verse":{"newslot":true,"savepos":true,"savehead":true,"indexattributes":{"n":{"regstr":" n=\\"(.*?)\\"","unique":true,"saveval":true,"prefix":"chapter[n]"}}},"pb":{"emptytag":true,"newslot":false,"savepos":true,"savehead":false,"indexattributes":{"n":{"regstr":" n=\\"(.*?)\\"","saveval":true,"prefix":"book[n]"}}}}' }
+�ƻs�F         1 ���ɮסC
+Start indexing Sun Nov 10 2013 16:27:02 GMT+0800 (台北標準時間)
+SLOTSIZE 256
+hb51.xml                                                              ydb estimate size: 134217728
+overflow slots: {}
+performing postings2tree
+output filename ../hb51.ydb
+{ build: 11,
+  dbid: 'hb51',
+  builddatetime: 'Sun Nov 10 2013 16:27:05 GMT+0800 (台北標準時間)',
+  buildduration: 3816,
+  slotcount: 34450,
+  tokencount: 1121570,
+  slotperbatch: 256,
+  toc: 
+   { logical: [ 'testiment', 'book', 'chapter' ],
+     physical: [ 'book', 'pb' ] },
+  slotshift: 8,
+  version: '0.0.0',
+  tags: 
+   [ 'xml',
+     'pb',
+     'testment',
+     '/testment',
+     'book',
+     '/book',
+     'chapter',
+     '/chapter',
+     'verse',
+     'god',
+     '/god',
+     '/xml' ],
+  schema: '{"xml":{"newslot":true,"savepos":true,"savehead":true},"testiment":{"newslot":true,"savepos":true,"savehead":true,"indexattributes":{"id":{"regstr":" id=\\"(.*?)\\"","unique":true,"saveval":true}}},"book":{"newslot":true,"savepos":true,"savehead":true,"indexattributes":{"n":{"regstr":" n=\\"(.*?)\\"","saveval":true}}},"chapter":{"newslot":true,"savepos":true,"savehead":true,"indexattributes":{"n":{"regstr":" n=\\"(.*?)\\"","unique":true,"saveval":true,"prefix":"book[n]"}}},"verse":{"newslot":true,"savepos":true,"savehead":true,"indexattributes":{"n":{"regstr":" n=\\"(.*?)\\"","unique":true,"saveval":true,"prefix":"chapter[n]"}}},"pb":{"emptytag":true,"newslot":false,"savepos":true,"savehead":false,"indexattributes":{"n":{"regstr":" n=\\"(.*?)\\"","saveval":true,"prefix":"book[n]"}}}}' }
+�ƻs�F         1 ���ɮסC
+Start indexing Sun Nov 10 2013 16:27:06 GMT+0800 (台北標準時間)
+SLOTSIZE 256
+hgb1.xml                                                              ydb estimate size: 134217728
+overflow slots: {}
+performing postings2tree
+output filename ../hgb1.ydb
+{ build: 10,
+  dbid: 'hgb1',
+  builddatetime: 'Sun Nov 10 2013 16:27:10 GMT+0800 (台北標準時間)',
+  buildduration: 3732,
+  slotcount: 47857,
+  tokencount: 1116434,
+  slotperbatch: 256,
+  toc: 
+   { logical: [ 'testiment', 'book', 'chapter' ],
+     physical: [ 'book', 'pb' ] },
+  slotshift: 8,
+  version: '0.0.0',
+  tags: 
+   [ 'xml',
+     'pb',
+     'testment',
+     '/testment',
+     'book',
+     '/book',
+     'chapter',
+     '/chapter',
+     'verse',
+     'god',
+     '/god',
+     '/xml' ],
+  schema: '{"xml":{"newslot":true,"savepos":true,"savehead":true},"testiment":{"newslot":true,"savepos":true,"savehead":true,"indexattributes":{"id":{"regstr":" id=\\"(.*?)\\"","unique":true,"saveval":true}}},"book":{"newslot":true,"savepos":true,"savehead":true,"indexattributes":{"n":{"regstr":" n=\\"(.*?)\\"","saveval":true}}},"chapter":{"newslot":true,"savepos":true,"savehead":true,"indexattributes":{"n":{"regstr":" n=\\"(.*?)\\"","unique":true,"saveval":true,"prefix":"book[n]"}}},"verse":{"newslot":true,"savepos":true,"savehead":true,"indexattributes":{"n":{"regstr":" n=\\"(.*?)\\"","unique":true,"saveval":true,"prefix":"chapter[n]"}}},"pb":{"emptytag":true,"newslot":false,"savepos":true,"savehead":false,"indexattributes":{"n":{"regstr":" n=\\"(.*?)\\"","saveval":true,"prefix":"book[n]"}}}}' }
+�ƻs�F         1 ���ɮסC
+Start indexing Sun Nov 10 2013 16:27:11 GMT+0800 (台北標準時間)
+SLOTSIZE 256
+kjv1.xml                                                              ydb estimate size: 134217728
+overflow slots: {}
+performing postings2tree
+output filename ../kjv1.ydb
+{ build: 12,
+  dbid: 'kjv1',
+  builddatetime: 'Sun Nov 10 2013 16:27:13 GMT+0800 (台北標準時間)',
+  buildduration: 2235,
+  slotcount: 34432,
+  tokencount: 853179,
+  slotperbatch: 256,
+  toc: 
+   { logical: [ 'testiment', 'book', 'chapter' ],
+     physical: [ 'book', 'pb' ] },
+  slotshift: 8,
+  version: '0.0.0',
+  tags: 
+   [ 'xml',
+     'pb',
+     'testment',
+     '/testment',
+     'book',
+     '/book',
+     'chapter',
+     '/chapter',
+     'verse',
+     '/xml' ],
+  schema: '{"xml":{"newslot":true,"savepos":true,"savehead":true},"testiment":{"newslot":true,"savepos":true,"savehead":true,"indexattributes":{"id":{"regstr":" id=\\"(.*?)\\"","unique":true,"saveval":true}}},"book":{"newslot":true,"savepos":true,"savehead":true,"indexattributes":{"n":{"regstr":" n=\\"(.*?)\\"","saveval":true}}},"chapter":{"newslot":true,"savepos":true,"savehead":true,"indexattributes":{"n":{"regstr":" n=\\"(.*?)\\"","unique":true,"saveval":true,"prefix":"book[n]"}}},"verse":{"newslot":true,"savepos":true,"savehead":true,"indexattributes":{"n":{"regstr":" n=\\"(.*?)\\"","unique":true,"saveval":true,"prefix":"chapter[n]"}}},"pb":{"emptytag":true,"newslot":false,"savepos":true,"savehead":false,"indexattributes":{"n":{"regstr":" n=\\"(.*?)\\"","saveval":true,"prefix":"book[n]"}}}}' }
+�ƻs�F         1 ���ɮסC
+Start indexing Sun Nov 10 2013 16:27:14 GMT+0800 (台北標準時間)
+SLOTSIZE 256
+bbe1.xml                                                              ydb estimate size: 134217728
+overflow slots: {}
+performing postings2tree
+output filename ../bbe1.ydb
+{ build: 17,
+  dbid: 'bbe1',
+  builddatetime: 'Sun Nov 10 2013 16:27:16 GMT+0800 (台北標準時間)',
+  buildduration: 2106,
+  slotcount: 34706,
+  tokencount: 904088,
+  slotperbatch: 256,
+  toc: 
+   { logical: [ 'testiment', 'book', 'chapter' ],
+     physical: [ 'book', 'pb' ] },
+  slotshift: 8,
+  version: '0.0.0',
+  tags: 
+   [ 'xml',
+     'pb',
+     'testment',
+     '/testment',
+     'book',
+     '/book',
+     'chapter',
+     '/chapter',
+     'verse',
+     '/xml' ],
+  schema: '{"xml":{"newslot":true,"savepos":true,"savehead":true},"testiment":{"newslot":true,"savepos":true,"savehead":true,"indexattributes":{"id":{"regstr":" id=\\"(.*?)\\"","unique":true,"saveval":true}}},"book":{"newslot":true,"savepos":true,"savehead":true,"indexattributes":{"n":{"regstr":" n=\\"(.*?)\\"","saveval":true}}},"chapter":{"newslot":true,"savepos":true,"savehead":true,"indexattributes":{"n":{"regstr":" n=\\"(.*?)\\"","unique":true,"saveval":true,"prefix":"book[n]"}}},"verse":{"newslot":true,"savepos":true,"savehead":true,"indexattributes":{"n":{"regstr":" n=\\"(.*?)\\"","unique":true,"saveval":true,"prefix":"chapter[n]"}}},"pb":{"emptytag":true,"newslot":false,"savepos":true,"savehead":false,"indexattributes":{"n":{"regstr":" n=\\"(.*?)\\"","saveval":true,"prefix":"book[n]"}}}}' }
