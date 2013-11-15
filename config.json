@@ -1,4 +1,9 @@
 {
-	"db":"mvbr",
-	"toc":"logical"
+	"db":"bible_chinese",
+	"dbs":["bible_chinese"],
+	"website":"http://samsuanchen.github.io",
+	"searchtab":[
+		{"widget":"simple-search-widget","name":"Simple Search"}
+		,{"widget":"about-widget","name":"About"}
+	]
 }
