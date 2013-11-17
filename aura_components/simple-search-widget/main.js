@@ -15,6 +15,7 @@ define(['underscore','backbone','text!./template.tmpl','text!./dbs_template.tmpl
     selectdb:function(e) {
       var db=$(e.target).data('db');
       this.model.set('db',db);
+      this.$el.find("#bookmark").text("與對應的"+db.split(':')[1]+"比對")
     },
     gotosource:function(opts) {
       var extra={db:opts.db,start:opts.slot,scrollto:"",tofind:opts.tofind}
@@ -67,7 +68,8 @@ define(['underscore','backbone','text!./template.tmpl','text!./dbs_template.tmpl
         this.sandbox.yase.phraseSearch({tofind:tofind,countonly:true,db:dbs[i].name},
           (function(db) {
             return function(err,data){
-             dbs[db].count=data;
+             dbs[db].count=data.count;
+             dbs[db].extraclass='hit'
              that.showdbs();
             }
           })(i)
@@ -78,9 +80,11 @@ define(['underscore','backbone','text!./template.tmpl','text!./dbs_template.tmpl
       this.html(_.template(template,{ value:this.options.value||""}) );
       this.$el.find("#tofind").focus();
     },
-    showdbs:function() {
-      var dbs=this.model.get('dbs');
-      $("#bible_related_db").html(_.template(dbs_template,{dbs:dbs}));
+    showdbs:function() { var dbs, h
+      this.dbs=dbs=this.model.get('dbs');
+      h=_.template(dbs_template,{dbs:dbs})
+      this.$el.find("#bible_related_db").html(h);
+    //  console.log(h)
     },
     initialize: function() {
      	this.render();

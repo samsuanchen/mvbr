@@ -5,12 +5,41 @@ define(['underscore','backbone',
    events:{
     "mousemove .resultitem":"resultitemhover",
     "click .opentext":"opentext",
-
     "click #bookmark":"dobookmark"
    },
    dobookmark:function(e) {
+    if (this.db==='mvbr:hb51') return
      var slot=$(e.target).parent().data('slot');
-     console.log(slot);
+    var that=this, w, n, v, t1, t2, d
+    w='給 dbName "'+that.db+'", slotNumber "'+slot+'" 取 tag "verse" attrib "n" 的回傳值 data'
+    that.sandbox.yase.closestTag({db:that.db,slot:slot,tag:'verse',attributes:['n']},function(err,data) {
+      if (err) {
+        console.log(w); alert(err); return
+      }
+      n=data[0].values.n // 從 data 取 tag "verse" attrib "n" 的值 (例如: "2.3.22")
+      w='給 dbName "'+that.db+'", slotNumber "'+slot+'" 取 text 的回傳值 t1'
+      that.sandbox.yase.getText({db:that.db,slot:slot},function(err,t1) {
+        if (err) {
+          console.log(w); alert(err); return
+        }
+        t1=t1.split(/<verse n=".+?"\/>/)[1] // 刪除前置 tag "verse"
+        v='verse[n='+n+']' // 'verse[n=2.3.22]'
+        w='給 dbName "hb51", selector "'+v+'" 取 text 的回傳值 data2'
+        that.sandbox.yase.findTag({db:'hb51',selector:v},function(err,data2) {
+          if (err) {
+            console.log(w); alert(err); return
+          }
+          t2=data2[0].text.split(/<verse n=".+?"\/>/)[1] // 刪除前置 tag "verse"
+          d = new that.sandbox.diff();
+          d=d.diff_prettyHtml(d.diff_main(t1,t2))
+          that.sandbox.emit('diff',d+t2,slot)
+        });
+      });
+    });
+   },
+   diff:function(d,slot) {
+    var obj=this.$el.find("[data-slot="+slot+"] .multiversion").parent().children()[2]
+    obj.innerHTML=obj.innerHTML?'':d
    },
    opentext:function(e) {
      var slot=$(e.target).data('slot');
@@ -19,33 +48,18 @@ define(['underscore','backbone',
      this.sandbox.emit("gotosource",opts);
    },
    resultitemhover:function(e) {
+    var $b=this.$el.find('#bookmark'), t=$b.text()
+    $b.text(this.db==='mvbr:hb51'?'':'diff with hb51')
     $e=$(e.target);
     while ($e.length && !$e.hasClass('resultitem')) {
       $e=$e.parent();
     }
     var top=$e.offset().top;
     var $listmenu=this.$el.find("#listmenu");
-    $listmenu.offset({top:top})
+    $listmenu.offset({top:top+8,left:200})
     var slot=$e.find("[data-slot]").data("slot");
     $listmenu.data("slot",slot);
-	var that=this
-	that.sandbox.yase.closestTag({db:that.db,slot:slot,tag:'verse',attributes:['n']},function(err,data) {
-		var v='verse[n='+data[0].values.n+']' // 'verse[n=2.3.22]'
-		that.sandbox.yase.getText({db:that.db,slot:slot},function(err,text) {
-			that.sandbox.yase.findTag({db:'hb51.ydb',selector:v},function(err,data2) {
-				var t2=data2[0].text
-				console.log(that.db,text)
-				console.log('hb51.ydb',t2);
-				var diff = new that.sandbox.diff();
-				var d=diff.diff_main(text,t2)
-				that.sandbox.emit('diff',diff.diff_prettyHtml(d),slot)
-			});
-		});
-	});
     //console.log(slot);
-   },
-   diff:function(d,slot) {
-   	   this.$el.find("[data-slot="+slot+"] .multiversion").parent().html(d)
    },
    type:"Backbone",
     resize:function() {
@@ -94,6 +108,8 @@ define(['underscore','backbone',
       this.html(_.template(template,{tofind:tofind}));
       this.resize();
       this.loadscreenful();
+      var $listmenu=this.$el.find("#listmenu");
+      $listmenu.offset({top:8,left:200})
     },
     settotalslot:function(count,hitcount) {
       var that=this;//totalslot might come later
