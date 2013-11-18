@@ -15,7 +15,6 @@ define(['underscore','backbone','text!./template.tmpl','text!./dbs_template.tmpl
     selectdb:function(e) {
       var db=$(e.target).data('db');
       this.model.set('db',db);
-      this.$el.find("#bookmark").text("與對應的"+db.split(':')[1]+"比對")
     },
     gotosource:function(opts) {
       var extra={db:opts.db,start:opts.slot,scrollto:"",tofind:opts.tofind}
@@ -68,7 +67,7 @@ define(['underscore','backbone','text!./template.tmpl','text!./dbs_template.tmpl
         this.sandbox.yase.phraseSearch({tofind:tofind,countonly:true,db:dbs[i].name},
           (function(db) {
             return function(err,data){
-             dbs[db].count=data.count;
+             dbs[db].count=data;
              dbs[db].extraclass='hit'
              that.showdbs();
             }
