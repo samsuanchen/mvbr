@@ -86,14 +86,51 @@ define(['underscore','backbone','text!./template.tmpl','text!./dbs_template.tmpl
     //  console.log(h)
     },
     initialize: function() {
+function assert (condition, message) {
+    if (!condition) {
+        throw message || "Assertion failed";
+    }
+}
+function addMethod(object, name, fn){
+ var old = object[ name ];
+ object[ name ] = function matchMethod() {
+   if ( fn.length == arguments.length )
+   return fn.apply( this, arguments )
+   else if ( typeof old == 'function' ) // if old is the predefined matchMethod
+   return old.apply( this, arguments );
+  }
+}
+function Ninjas(){
+ var ninjas = [ "Dean Edwards", "Sam Stephenson", "Alex Russell" ];
+ addMethod(this, "find", function(){
+ return ninjas;
+ });
+ addMethod(this, "find", function(name){
+ var ret = [];
+ for ( var i = 0; i < ninjas.length; i++ )
+ if ( ninjas[i].indexOf(name) == 0 )
+ ret.push( ninjas[i] );
+ return ret;
+ });
+ addMethod(this, "find", function(first, last){
+ var ret = [];
+ for ( var i = 0; i < ninjas.length; i++ )
+ if ( ninjas[i] == (first + " " + last) )
+ ret.push( ninjas[i] );
+ return ret;
+ });
+}
+ var ninjas = new Ninjas();
+ assert( ninjas.find().length == 3, "Finds all ninjas" );
+ assert( ninjas.find("Sam").length == 1, "Finds ninjas by first name" );
+ assert( ninjas.find("Dean", "Edwards") == 1, "Finds ninjas by first and last name" );
+ assert( ninjas.find("Alex", "X", "Russell") == null, "Does nothing" );
+
      	this.render();
       var that=this;
       this.model=new Backbone.Model();
       this.config=JSON.parse(config);
       this.sandbox.on('selectdb',this.selectdb,this);
-      
-
-
       this.model.on('change:db',function(){that.listresult()},this);
       this.sandbox.on('more',this.listresult ,this);
       this.sandbox.on("gotosource",this.gotosource,this);

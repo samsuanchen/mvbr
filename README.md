@@ -22,6 +22,10 @@ you will get sample.ydb in slotfilter
 * 6. 到 kse 資料夾, 執行 git pull (確定使用最新版本)
 * 7. 到 mvbr 資料夾, 編輯 config.json 指定 db 使用 chinese_bible.ydb
 
+###下載 kse 的步驟:
+* 1. 到 ksanapc 資料夾
+* 2. 執行 git clone https://github.com/yapcheahshen/kse
+
 ###下載 康熙字典 的步驟:
 * 1. 到 ksanapc 資料夾
 * 2. 執行 git clone https://github.com/ksanaforge/kangxizidian
@@ -47,3 +51,7 @@ you will get sample.ydb in slotfilter
 
 ###暫時測試 *.ydb 的步驟:
 * 1. 到 kse 資料夾, 執行 run.cmd (所有 ksanapc 下一層資料夾內 *.ydb 都連上)
+
+###下載 mvbr 的步驟:
+* 1. 到 ksanapc 資料夾
+* 2. 執行 git clone -b dev https://github.com/samsuanchen/mvbr 

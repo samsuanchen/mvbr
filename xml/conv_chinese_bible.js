@@ -133,33 +133,51 @@ var naming= // cn=chinese_name cb=chinese_brief en=english_name eb=english_brief
  "Rev":{"cn":"啟示錄","cb":"啟","en":"Revelation","eb":"Rev"}
  }
 // console.log(naming["猶"])
-var match, line, N, i, n
+var match, oldT, newT, N, i, n
 var text, testment, chinese_brief, chinese_name, english_brief
 var chapter_index, verse_index, verse
 var backs='';for(var j=0;j<5;j++)backs+=String.fromCharCode(8)
 var fs=require('fs')
+var files=['1ot','2nt']
 var file_name, file_ext='xml', file, out
-file_name='kjv'
-file=file_name+'.'+file_ext
-text=fs.readFileSync(file).toString().split('\r\n')
-console.log(text.length,'lines read from',file)
-out=
-['<xml id="'+file+'" info="'+text[0]+'">'
-,'<testment id="ot">Old testment</testment>'
-]
-for (i=1;i<text.length;i++) {
-//	if (i>20) break
-	line=text[i]
-	if (!line) continue
-	match=line.match(/(\d?[A-Z][a-z]+)(\d+):(\d+) (.+)/)
-	if (!match) continue
-	if (english_brief!==match[1]) {
-		english_brief  =match[1]
-		console.log(english_brief)
+var t=0, b=0, c, v
+while (file_name=files.shift()) {
+	file=file_name+'.'+file_ext
+	text=fs.readFileSync(file).toString().split('\r\n')
+	console.log(text.length,'lines read from',file,'utf-8')
+	out=[]
+	for (i=0;i<text.length;i++) {
+		oldT=text[i]
+	//	console.log(oldT.match(/<檔 src=(.+)>/)) //<檔 src="1ot.xml">
+	//	exit
+		if (match=oldT.match(/<檔 src=(.+)>/)) {
+			newT='<xml id='+match[1]+'>'
+		} else
+		if (match=oldT.match(/<\/檔>/)) {
+			newT='</xml>'
+		} else
+		if (match=oldT.match(/<_頁 (.+) \/>/)) {
+			newT='<pb '+match[1]+'/>'
+		} else
+		if (match=oldT.match(/<約>(.+)<\/約>/)) {
+			newT='<testment id="'+(++t)+'">'+match[1]+'</testment>'
+		} else
+		if (match=oldT.match(/<卷>(.+)<\/卷> <簡名>(.+)<\/簡名>/)) { c=0
+			newT='<book n="'+(++b)+'">'+match[2]+' ('+match[1]+')</book>'
+		} else
+		if (match=oldT.match(/<章>(.+)<\/章>/)) { v=0
+			newT='<chapter n="'+(++c)+'">'+match[1]+'</chapter>'
+		} else
+		if (match=oldT.match(/<節>(.+)<\/節> (.+)/)) {
+			newT='<verse n="'+(++v)+'"/>'+match[1]+' '+match[2]
+		} else newT=oldT
+	//	if (newT!==oldT) console.log(i<10?'  ':' ',newT)
+		out.push(newT)
 	}
-//	n=i.toString()
-//	process.stdout.write(backs+'0000'.substr(0,5-n.length)+n)
+	file=file_name+'2.'+file_ext
+	console.log(out.length,'lines written to',file,'utf-8')
+	fs.writeFileSync(file,out.join('\r\n'))
 }
-//	file=file_name+'1.'+file_ext
-//	console.log('\r\n'+n,'lines converted to',file,'utf-8')
-//	fs.writeFileSync(file,text.join('\r\n')) // */
+//	
+//	
+//	 // */
