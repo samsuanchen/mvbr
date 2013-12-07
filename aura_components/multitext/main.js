@@ -27,23 +27,27 @@ define(['underscore','backbone',
     },
 
     fetchbytag:function() {
-      var that=this;
-      this.sandbox.yase.getTextByTag({db:this.db, 
-        selector:this.start,query:this.query, maxslot:5000},
-        function(err,data){
-          that.$(".bodytext").html(_.template(texttemplate,data));
-          that.insertParagraphMenu();
-          if (!that.scrollto) return;
+      var selector=this.start, id=selector.match(/verse\[n=(.+)\]/)[1]
+      for (var db in this.dbs) if (db !== this.db) {
+	      var opts={db:db, selector:selector, query:this.query, maxslot:5000}
+          this.opts=opts
+		  var that=this; 
+	      this.sandbox.yase.getTextByTag(opts,function(err,data){
+              var parms={db:that.opts.db,text:data.starttag.text,id:id}
+	          that.$(".bodytext").append(_.template(texttemplate,parms));
+	          that.insertParagraphMenu();
+	          if (!that.scrollto) return;
 
-          setTimeout(function(){
-            var offset=that.$el.find(that.scrollto).offset() || {top:0};
-            that.$el.animate({
-                scrollTop: offset.top-100
-            },'slow',function(){
-               that.blink(that.$el.find(that.scrollto));  
-            });            
-          },500);
-      })      
+	          setTimeout(function(){
+	            var offset=that.$el.find(that.scrollto).offset() || {top:0};
+	            that.$el.animate({
+	                scrollTop: offset.top-100
+	            },'slow',function(){
+	               that.blink(that.$el.find(that.scrollto));  
+	            });            
+	          },500);
+	      })    
+      }  
     },
     settext:function(opts) {
       if (!opts) return;
@@ -53,7 +57,7 @@ define(['underscore','backbone',
       this.csstag=this.cssselector.substring(0,this.cssselector.indexOf("["));
       this.query=opts.query;
       this.scrollto=opts.scrollto;
-      this.db=opts.db;
+      this.db=opts.db, this.dbs=opts.dbs;
       this.fetchbytag();
     },   
     tabinit:function(opts) {

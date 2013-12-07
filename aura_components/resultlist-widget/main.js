@@ -25,7 +25,7 @@ define(['underscore','backbone','text!./results.tmpl','text!./item.tmpl'],
       						console.log(w); alert(err); return
     					}
     					t1=t1.split(/<verse n=".+?"\/>/)[1] // 刪除前置 tag "verse"
-    					v='verse[n='+n+']' // 'verse[n=2.3.22]'
+    					v='verse[n='+n+']' // 'verse[n=1.2.22]'
     					w='給 dbName "hb51", selector "'+v+'" 取 text 的回傳值 data2'
     					that.sandbox.yase.findTag({db:'hb51',selector:v},function(err,data2) {
       						if (err) {
@@ -51,8 +51,7 @@ define(['underscore','backbone','text!./results.tmpl','text!./item.tmpl'],
 	  var yase=Yase.api(services);
 	  var closestTag=services['yase'].closestTag;
       var o={db:'mvbr:bible1',slot:58,tag:'verse',attributes:'n'}
-      var d=closestTag(o)[0].values.n.split('.')
-      var start={book:"[n="+d[0],chapter:"[n="+d[1],verse:"[n="+d[2]}
+      var start="verse[n="+closestTag(o)[0].values.n+"]"
       var opts={db:this.db,start:start,query:query}
 			//	var opts={db:this.db,slot:slot,query:query}
 				this.sandbox.emit("gotosource",opts);

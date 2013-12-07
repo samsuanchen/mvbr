@@ -18,10 +18,12 @@ define(['underscore','backbone','text!./template.tmpl','text!./dbs_template.tmpl
       this.model.set('db',db);
     },
     gotosource:function(opts) {
-      opts.scrollto="", opts.widget="multitext", opts.name=opts.query
+      opts.scrollto=""
+      opts.dbs=this.dbs
+      var extra={widget:"multitext",name:opts.query,extra:opts,focus:true}
 //	var extra={db:opts.db,start:opts,scrollto:"",query:query}
 //  var opts={widget:"multitext",name:query,extra:extra,focus:true};
-      this.sandbox.emit("newtab",opts);
+      this.sandbox.emit("newtab",extra);
     },         
     listresult:function(start) {
       var that=this;
